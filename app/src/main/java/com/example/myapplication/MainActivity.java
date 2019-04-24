@@ -173,13 +173,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONArray response) {
 
-                             String idEmpresa ;
-                             String rutA = null;
-                             String nombre;
-                             String clave=null;
-                             String pago = null;
-                             String correlativo;
-
                             String array = response.toString();
                             try {
                                 JSONArray json = new JSONArray(array);
@@ -187,14 +180,22 @@ public class MainActivity extends AppCompatActivity {
 
                                     JSONObject o = json.getJSONObject(i);
 
-                                    idEmpresa = o.getString("id");
-                                     rutA = o.getString("rut");
-                                     nombre = o.getString("nombre");
-                                     clave = o.getString("password");
-                                     pago = o.getString("pago");
-                                     correlativo = o.getString("correlativo");
+                                    String idEmpresa = o.getString("id");
+                                    String rutA = o.getString("rut");
+                                    String nombre = o.getString("nombre");
+                                    String clave = o.getString("password");
+                                    String pago = o.getString("pago");
+                                    String correlativo = o.getString("correlativo");
 
 
+                                    try {
+                                        EmpresaController controller = new EmpresaController(getApplicationContext());
+                                        controller.crearEmpresa(Integer.parseInt(idEmpresa), rutA, nombre, clave, pago, correlativo);
+                                        Log.d("CREADO USUARIO", null);
+                                    } catch (Exception e) {
+                                        String mensaje = e.getMessage();
+                                        Log.d("NO CREADO", mensaje);
+                                    }
 
 
                                 }
@@ -209,13 +210,15 @@ public class MainActivity extends AppCompatActivity {
 
                             EmpresaController controller = new EmpresaController(getApplicationContext());
 
-                            if (pago.equals("0")) {
+                            if (controller.obtenerPAGOusuarioString(rut).equals("0")) {
+
+                                controller.eliminarRegistros();
 
                                 progressDialog.dismiss();
 
                                 Toast.makeText(getApplicationContext(), "PAGA LA WA", Toast.LENGTH_SHORT).show();
 
-                            }else if (rutA.equals("194872194")&& clave.equals("123456789")) {
+                            }else if (controller.usuarioLogin(rut, password)) {
 
 
                                 Intent intent = new Intent(MainActivity.this, Formulario.class);
@@ -226,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sesion.edit();
 
                                 editor.putBoolean(EmpresaDBContract.Sesion.FIELD_SESSION, true);
-                                editor.putString(EmpresaDBContract.Sesion.FIELD_USERNAME, rutA);
+                                editor.putString(EmpresaDBContract.Sesion.FIELD_USERNAME, rut);
 
                                 editor.putString(EmpresaDBContract.Sesion.FIELD_ID, controller.obtenerIDusuario(rut));
 
@@ -242,6 +245,8 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
 
                             } else {
+
+                                controller.eliminarRegistros();
                                 progressDialog.dismiss();
                                 Toast.makeText(getApplicationContext(), "Datos incorrectos", Toast.LENGTH_SHORT).show();
                             }
