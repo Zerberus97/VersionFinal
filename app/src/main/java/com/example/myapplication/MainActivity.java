@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 progressDialog.dismiss();
 
-                                Toast.makeText(getApplicationContext(), "PAGA LA WA", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Debe realizar su pago mensual", Toast.LENGTH_SHORT).show();
 
                             }else if (controller.usuarioLogin(rut, password)) {
 
