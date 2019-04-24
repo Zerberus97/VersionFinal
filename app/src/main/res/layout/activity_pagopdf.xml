@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-black"
-        android:text="Este fue el ultimo PDF creado puede encontrarlo en sus archivos :("
+        android:text="Este fue el ultimo PDF creado. Puede encontrarlo en sus archivos :("
         android:textAlignment="center"
         android:textSize="24sp" />
 

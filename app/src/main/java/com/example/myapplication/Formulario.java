@@ -732,7 +732,7 @@ public class Formulario extends AppCompatActivity {
             Image image = Image.getInstance(stream.toByteArray());
 
             AssetManager mngr1 = getAssets();
-            InputStream is1 = mngr1.open("firmaRoberto.jpg");
+            InputStream is1 = mngr1.open("firmaRoberto.png");
             Bitmap bmp1 = BitmapFactory.decodeStream(is1);
             ByteArrayOutputStream stream12 = new ByteArrayOutputStream();
             bmp1.compress(Bitmap.CompressFormat.PNG, 100, stream12);
