@@ -362,28 +362,34 @@
             <!-- Fin formulario -->
 
 
-            <Button
-                android:id="@+id/button_save"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginTop="20dp"
-                android:onClick="pdfApp"
-                android:text="Guardar Orden"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <Button
-                android:id="@+id/button_send"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:onClick="sendEmail"
-                android:text="Enviar Orden"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <Button
+                    android:id="@+id/button_save"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="20dp"
+                    android:onClick="pdfApp"
+                    android:text="Guardar Orden"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <Button
+                    android:id="@+id/button_send"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:onClick="sendEmail"
+                    android:text="Enviar Orden"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            </LinearLayout>
 
 
         </LinearLayout>
