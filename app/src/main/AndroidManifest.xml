@@ -12,20 +12,21 @@
         android:icon="@mipmap/icono"
         android:allowBackup="true"
         android:label="Generador PDF Ordenes de Trabajo"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
         <activity
             android:name=".Formulario"
             android:windowSoftInputMode="stateHidden"
-            android:label="Generar documento PDF">
+            android:label="Generar documento PDF"
+            android:theme="@style/AppTheme">
 
         </activity>
         <activity
-            android:name=".FirmaActivity">
+            android:name=".FirmaActivity"
+            android:theme="@style/AppTheme2">
 
         </activity>
         <activity android:name=".PagoCreadoActivity"></activity>
-        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden">
+        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden" android:theme="@style/AppTheme2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

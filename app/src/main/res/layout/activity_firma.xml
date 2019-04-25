@@ -18,22 +18,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btnclear"
+            style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnclear"
-            android:text="Limpiar"/>
+            android:text="Limpiar" />
 
         <Button
+            android:id="@+id/btnsave"
+            style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnsave"
-            android:text="Guardar"/>
+            android:text="Guardar" />
 
     </LinearLayout>
 
