@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -958,7 +959,7 @@ public class Formulario extends AppCompatActivity {
                         "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(getApplicationContext(), "Debe crear el archivo primero", Toast.LENGTH_LONG).show();
+            Snackbar.make(view, "Debe crear el archivo primero", Snackbar.LENGTH_SHORT).show();
         }
 
     }
