@@ -890,7 +890,9 @@ public class Formulario extends AppCompatActivity {
                             Intent intent=new Intent(Formulario.this,PagoCreadoActivity.class);
 
                             editor.putString(EmpresaDBContract.Sesion.FIELD_PAGO, String.valueOf(pago));
-
+                            editor.putBoolean(EmpresaDBContract.Sesion.FIELD_SESSION, false);
+                            editor.putString(EmpresaDBContract.Sesion.FIELD_USERNAME, "");
+                            editor.apply();
 
                             startActivity(intent);
 

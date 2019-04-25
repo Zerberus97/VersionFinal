@@ -23,12 +23,6 @@ public class PagoCreadoActivity extends AppCompatActivity {
 
         Intent intent=new Intent(PagoCreadoActivity.this,MainActivity.class);
 
-        SharedPreferences sesiones = getSharedPreferences(EmpresaDBContract.Sesion.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sesiones.edit();
-
-        editor.putBoolean(EmpresaDBContract.Sesion.FIELD_SESSION, false);
-        editor.putString(EmpresaDBContract.Sesion.FIELD_USERNAME, "");
-        editor.commit();
 
         startActivity(intent);
     }
