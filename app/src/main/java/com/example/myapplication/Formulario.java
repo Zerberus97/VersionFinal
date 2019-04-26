@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,19 +15,15 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDialogFragment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -38,7 +33,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.myapplication.controller.EmpresaController;
 import com.example.myapplication.model.EmpresaDBContract;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
@@ -49,10 +43,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -69,15 +61,13 @@ import static com.example.myapplication.FirmaActivity.firmaPNG;
 public class Formulario extends AppCompatActivity {
 
 
-    private static final Byte Base64 = null;
     //Variables
-    private TextView txtFormulario;
+
     private EditText txtNombreEmpresa, txtDireccionEmpresa, txtRBDEmpresa, txtObservaciones;
     private Button btnGuardar, btnEnviar;
     private RadioGroup RGroup;
     private RadioButton RadioServicio, RadioControl;
     private CheckBox CheckRBpe, CheckRBpi, CheckRBb, CheckRbext, CheckRbint, CheckRbbo, CheckRbsha, CheckRbshc, CheckRbcamF, CheckRbbroma, CheckRbtrampa, CheckRbnotoxico, CheckRbcipermetrina, CheckRbdelta, CheckRbaguatrin, CheckRbagita, CheckRbsanicitrex;
-    private File myFile;
 
     private String TipoServicio = "";
     private String Cell = "CEL: 9 8370 1407 – 2 2966 3828";
@@ -645,17 +635,12 @@ public class Formulario extends AppCompatActivity {
 
 
                     templatePDF.addTitles("ORDEN DE TRABAJO","N° " + correlativo);
-                    //templatePDF.addContact(Cell,web);
                     templatePDF.Servicio(TipoServicio);
                     templatePDF.addParagraph("Nombre empresa: " + txtNombreEmpresa.getText().toString());
                     templatePDF.addParagraph("Direccion empresa: " + txtDireccionEmpresa.getText().toString());
 
 
-        /*
-           ----------------------------------------------------------------------
-           |            poner servicio y RBD                                    |
-           ----------------------------------------------------------------------
-         */
+
                     templatePDF.addParagraph("Fecha: "+ timeStamp);
                     templatePDF.addParagraph("RBD: "+ txtRBDEmpresa.getText().toString());
 
@@ -666,7 +651,6 @@ public class Formulario extends AppCompatActivity {
                     templatePDF.addParagraph("\n");
                     templatePDF.addParagraph("Observaciones");
                     templatePDF.addParagraph(txtObservaciones.getText().toString());
-                    //templatePDF.addImage3(firmaR);
                     templatePDF.closeDocument();
 
 
@@ -762,7 +746,6 @@ public class Formulario extends AppCompatActivity {
 
 
             templatePDF.addImage(image);
-            //templatePDF.addTitles("ORDEN DE TRABAJO","N° " + correlativo);
             templatePDF.addContact(Cell,web,"ORDEN DE TRABAJO", "N° " + correlativo);
             templatePDF.Servicio(TipoServicio);
             templatePDF.addParagraph("Nombre empresa: " + txtNombreEmpresa.getText().toString());
@@ -778,35 +761,10 @@ public class Formulario extends AppCompatActivity {
             templatePDF.addParagraph("\n");
             templatePDF.addParagraph("Observaciones");
             templatePDF.addParagraph(txtObservaciones.getText().toString());
-            /*
-            templatePDF.addImage3(firmaR);
-            templatePDF.addImage2(firma);
-            */
             templatePDF.addFirmas(firmaR, firma);
             templatePDF.closeDocument();
 
 
-            EmpresaController controller = new EmpresaController(getApplicationContext());
-
-
-       /* if (controller.existeono(txtNombreEmpresa.getText().toString())) {
-
-
-            try {
-                controller.crearEmpresa(txtNombreEmpresa.getText().toString(), txtDireccionEmpresa.getText().toString(), txtRBDEmpresa.getText().toString());
-                Toast.makeText(getApplicationContext(), "creado", Toast.LENGTH_LONG).show();
-            } catch (Exception e) {
-                e.printStackTrace();
-
-
-
-            }
-        }else {
-            Toast.makeText(getApplicationContext(), "ya existe", Toast.LENGTH_LONG).show();
-
-        }
-
-       */
 
             //Ver PDF
             if (TemplatePDF.archivoPDF.exists()) {
@@ -946,7 +904,6 @@ public class Formulario extends AppCompatActivity {
             Intent emailIntent = new Intent(Intent.ACTION_SEND);
             Uri uri2 = FileProvider.getUriForFile(Formulario.this, BuildConfig.APPLICATION_ID + ".provider", TemplatePDF.archivoPDF);
 
-            Uri uri = Uri.fromFile((new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "/DCIM/PDF/OT_CyberPunk_Calle Falsa #123_20190405_153700.pdf")));
 
             emailIntent.setData(Uri.parse("mailto:"));
             emailIntent.setType("text/plain");

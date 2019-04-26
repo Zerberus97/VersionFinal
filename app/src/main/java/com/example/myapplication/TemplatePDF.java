@@ -14,11 +14,9 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
-import com.itextpdf.text.TabSettings;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.draw.DrawInterface;
 import com.itextpdf.text.pdf.draw.VerticalPositionMark;
 
 import java.io.File;
@@ -40,20 +38,15 @@ public class TemplatePDF extends AppCompatActivity {
     private Font fTitle = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
     private Font fText = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-    private Font fHighText = new Font(Font.FontFamily.TIMES_ROMAN, 15, Font.BOLD, BaseColor.RED);
     private Font txtTabla = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.WHITE);
     private Font fServicio = new Font(Font.FontFamily.TIMES_ROMAN, 13, Font.ITALIC, BaseColor.BLACK);
 
     private Font Celular = new Font(Font.FontFamily.TIMES_ROMAN,9, Font.NORMAL, BaseColor.BLACK);
     private Font PaginaWeb = new Font(Font.FontFamily.TIMES_ROMAN,9, Font.NORMAL, BaseColor.BLACK);
 
-    public String nombreArchivo;
-
     private BaseColor verde = new BaseColor(59,152,78);
 
 
-    private String NombreEmpresa = "";
-    private String Direccion = "";
 
 
     public TemplatePDF(Context context) {
@@ -137,26 +130,6 @@ public class TemplatePDF extends AppCompatActivity {
 
 
         try {
-            //Solucion 1
-/*
-            paragraph = new Paragraph();
-            //addChildP2(new Paragraph(String.valueOf(celular), Celular));
-            //addChildP2(new Paragraph(String.valueOf(web), PaginaWeb));
-            paragraph.setTabSettings(new TabSettings(325f));
-            paragraph.add(celular);
-            paragraph.add("\n");
-            paragraph.add(web);
-
-            paragraph.add(Chunk.TABBING);
-
-            paragraph.add(titulo);
-            paragraph.add("\n");
-            paragraph.add(subtitulo);
-            paragraph.setAlignment(Element.ALIGN_JUSTIFIED);
-
-            paragraph.setSpacingAfter(0);
-*/
-            //Solucion 2
 
             Chunk glue = new Chunk(new VerticalPositionMark());
             Paragraph p = new Paragraph();
@@ -210,12 +183,6 @@ public class TemplatePDF extends AppCompatActivity {
     }
 
 
-    private void addChildP2(Paragraph childParagraph){
-        childParagraph.setAlignment(Element.CHUNK);
-        //childParagraph.setAlignment(Element.ALIGN_LEFT);
-        paragraph.add(childParagraph);
-    }
-
     private void addChildP(Paragraph childParagraph) {
         childParagraph.setAlignment(Element.ALIGN_RIGHT);
         paragraph.add(childParagraph);
@@ -237,23 +204,8 @@ public class TemplatePDF extends AppCompatActivity {
 
     }
 
-    public void addImage2(Image image){
-        try{
 
-            image.setAlignment(Image.RIGHT);
-            image.scalePercent(20);
-            documento.add(image);
-        }catch (Exception e){}
 
-    }
-
-    public void addImage3(Image image){
-        try{
-            image.setAlignment(Image.LEFT);
-            image.scalePercent(110);
-            documento.add(image);
-        } catch (Exception e){}
-    }
 
     public void addParagraph(String text) {
         try {

@@ -18,15 +18,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkError;
-import com.android.volley.NoConnectionError;
-import com.android.volley.ParseError;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.ServerError;
-import com.android.volley.TimeoutError;
+
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
@@ -39,17 +35,6 @@ import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
-    /*
-    private String[]header={"Control de Roedores","Control de Insectos","Control de Microorganismos"};
-    private String nEmpresa="NOMBRRE EMPRESA: ";
-    private String dEmpresa="DIRECCION EMPRESA: ";
-    private String fecha="FECHA: ";
-    private String rbd="RBD: ";
-    private TemplatePDF templatePDF;
-    private Intent emailIntent;
-    */
 
 
 
@@ -79,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         //pregunto por los permisos.
-        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -138,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         final String rut = txtRut.getText().toString();
         final String password = txtPassword.getText().toString();
 
-        final Intent intent = new Intent(this, Formulario.class);
+
 
         if (rut.isEmpty()) {
 

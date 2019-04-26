@@ -20,7 +20,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.itextpdf.text.Image;
 
 import java.io.File;
 import java.io.FileOutputStream;

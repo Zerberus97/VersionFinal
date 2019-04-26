@@ -2,7 +2,6 @@ package com.example.myapplication.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.util.Log;
 
 import com.example.myapplication.model.EmpresaDBContract;
 import com.example.myapplication.model.EmpresaModel;
@@ -32,17 +31,7 @@ public class EmpresaController {
 
     }
 
-    public boolean obtenerCount(){
 
-
-        if (this.empresaModel.obtenerCantidad()==0){
-            return false;
-        }else
-        {
-            return true;
-        }
-
-    }
 
     public boolean eliminarRegistros(){
 
