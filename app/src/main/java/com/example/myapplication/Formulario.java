@@ -381,7 +381,7 @@ public class Formulario extends AppCompatActivity {
 
 
 
-        comprobarPagoPDF();
+
 
 
 
@@ -585,6 +585,7 @@ public class Formulario extends AppCompatActivity {
 
 
 
+
             final AlertDialog.Builder alerta=new AlertDialog.Builder(this);
             alerta.setMessage("Crear documento sin firma?");
             alerta.setTitle("Guardar documento");
@@ -594,6 +595,7 @@ public class Formulario extends AppCompatActivity {
 
 
 
+                    comprobarPagoPDF();
 
                     //Capturando Fecha y Hora
                     Date date = new Date() ;
@@ -678,6 +680,7 @@ public class Formulario extends AppCompatActivity {
                         intent.setDataAndType(uri, "application/pdf");
                         try {
 
+
                             Limpiar();
                             startActivity(intent);
 
@@ -718,6 +721,7 @@ public class Formulario extends AppCompatActivity {
 
 
 
+            comprobarPagoPDF();
 
             Date date = new Date() ;
             String timeStamp = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(date);
