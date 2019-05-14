@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class FirmaActivity extends AppCompatActivity {
+public class FirmaActivity2 extends AppCompatActivity {
 
     private Button btnClear, btnSave;
     private File file;
@@ -36,7 +36,7 @@ public class FirmaActivity extends AppCompatActivity {
     private signature mSignature;
     private Bitmap bitmap;
 
-    public static File firmaPNG;
+    public static File firmaPNG2;
 
 
     // Creating Separate Directory for saving Generated Images
@@ -56,10 +56,9 @@ public class FirmaActivity extends AppCompatActivity {
 
     private String formularioBroma,formularioTrampa,formularioTox,formularioCBtb, formularioCBdb, formularioCBdc, formularioCBrb, formularioCBrp, formularioCBdm, formularioCBdb2, formularioCB50p1, formularioCB50p2, formularioCBta, formularioCBcnt;
 
-    private String formularioCIPE,formularioDELTA,formularioAQUA,formularioAGITA, formularioAnasec, formularioDemon, formularioKO, formularioCyper, formularioCyperP, formularioQuimico10, formularioQuimico20, formularioTrampa2;
+    private String formularioCIPE,formularioDELTA,formularioAQUA,formularioAGITA ,formularioAnasec, formularioDemon, formularioKO, formularioCyper, formularioCyperP, formularioQuimico10, formularioQuimico20, formularioTrampa2;
 
-    private String formularioSANI,formulario05, formulario01;
-    //------------- Fin formulario -------------------
+    private String formularioSANI,formulario05, formulario01;;
 
     private String formularioCORR;
 
@@ -69,7 +68,7 @@ public class FirmaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_firma);
+        setContentView(R.layout.activity_firma2);
 
         Bundle extras = this.getIntent().getExtras();
 
@@ -99,7 +98,6 @@ public class FirmaActivity extends AppCompatActivity {
             formularioPP=extras.getString("KEY_PRODUCCIONPROCESOS");
             formularioG=extras.getString("KEY_GUARDIA");
 
-
             formularioEX=extras.getString("KEY_EXTERIOR");
             formularioIN=extras.getString("KEY_INTERIOR");
             formularioBO2=extras.getString("KEY_BODEGAS2");
@@ -115,7 +113,6 @@ public class FirmaActivity extends AppCompatActivity {
             formularioCBdpVCBsdm2=extras.getString("KEY_SALADEMAQUINAS2");
             formularioCBdpVCBcya2=extras.getString("KEY_CASINOSYANEXOS2");
             formularioCBdpVCBpp2=extras.getString("KEY_PRODUCCIONPROCESOS2");
-
 
             formularioADM=extras.getString("KEY_ADM");
             formularioCAMARINES=extras.getString("KEY_CAMARINES");
@@ -136,7 +133,6 @@ public class FirmaActivity extends AppCompatActivity {
             formularioCB50p2=extras.getString("KEY_QUIMICO50P2");
             formularioCBta=extras.getString("KEY_TRAMPAADHESIVAS");
             formularioCBcnt=extras.getString("KEY_CEBONOTOXICO");
-
 
             formularioCIPE=extras.getString("KEY_CIPE");
             formularioDELTA=extras.getString("KEY_DELTA");
@@ -192,10 +188,10 @@ public class FirmaActivity extends AppCompatActivity {
 
 
                 Bitmap signature = mSignature.getBitmap();
-                Intent intent = new Intent(FirmaActivity.this, Formulario.class);
+                Intent intent = new Intent(FirmaActivity2.this, Formulario.class);
 
 
-                firmaPNG = new File(DIRECTORY,pic_name+".png");
+                firmaPNG2 = new File(DIRECTORY,pic_name+".png");
 
 
                 Bundle bundle =new Bundle();
@@ -222,7 +218,6 @@ public class FirmaActivity extends AppCompatActivity {
                 bundle.putString("KEY_LABORATORIOS",formularioLYA);
                 bundle.putString("KEY_PRODUCCIONPROCESOS",formularioPP);
                 bundle.putString("KEY_GUARDIA",formularioG);
-
 
                 bundle.putString("KEY_EXTERIOR",formularioEX);
                 bundle.putString("KEY_INTERIOR",formularioIN);
@@ -276,7 +271,6 @@ public class FirmaActivity extends AppCompatActivity {
                 bundle.putString("KEY_SANI",formularioSANI);
                 bundle.putString("KEY_QUIMICO05",formulario05);
                 bundle.putString("KEY_QUIMICO01",formulario01);
-
 
                 bundle.putString("KEY_CORRELATIVO",formularioCORR);
 
@@ -448,3 +442,4 @@ public class FirmaActivity extends AppCompatActivity {
         }
     }
 }
+

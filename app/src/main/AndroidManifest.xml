@@ -8,25 +8,28 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
-        android:icon="@mipmap/icono"
         android:allowBackup="true"
+        android:icon="@mipmap/icono"
         android:label="Generador PDF Ordenes de Trabajo"
         android:supportsRtl="true">
+        <activity android:name=".FirmaActivity2"
+            android:theme="@style/AppTheme2"></activity>
         <activity
             android:name=".Formulario"
-            android:windowSoftInputMode="stateHidden"
             android:label="Generar documento PDF"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".FirmaActivity"
-            android:theme="@style/AppTheme2">
+            android:theme="@style/AppTheme2"></activity>
 
-        </activity>
-        <activity android:name=".PagoCreadoActivity" android:theme="@style/AppTheme2"></activity>
-        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden" android:theme="@style/AppTheme2">
+        <activity
+            android:name=".PagoCreadoActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme2"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,9 +44,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

@@ -121,7 +121,7 @@
             </RadioGroup>
 
 
-            <!-- Formulario de checkboxs -->
+            <!--- Formulario de checkboxs -->
 
             <TextView
                 android:id="@+id/txtControl"
@@ -157,10 +157,87 @@
                 android:clickable="true"
                 android:text="Bodegas" />
 
+            <!-- Campos nuevos -->
+            <CheckBox
+                android:id="@+id/CBd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Deslindes" />
+            <CheckBox
+                android:id="@+id/Cbpec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Perimetro externo cercano" />
+            <CheckBox
+                android:id="@+id/CBbmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Bodegas materias primas" />
+            <CheckBox
+                android:id="@+id/CBbpt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Bodegas productos terminados" />
+            <CheckBox
+                android:id="@+id/CBo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Oficinas" />
+            <CheckBox
+                android:id="@+id/CBe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Entretechos" />
+            <CheckBox
+                android:id="@+id/CBc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Cerchas" />
+            <CheckBox
+                android:id="@+id/CBa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Alcantarillados" />
+            <CheckBox
+                android:id="@+id/CBsdm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Sala de Maquinas" />
+            <CheckBox
+                android:id="@+id/CBcya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Casinos y Anexos" />
+            <CheckBox
+                android:id="@+id/CBlya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Laboratorios y anexos" />
+            <CheckBox
+                android:id="@+id/CBpp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Produccion / procesos" />
+            <CheckBox
+                android:id="@+id/CBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Guardia" />
 
-            <!-- -->
-
-
+            <!--                                                                    fin 1 -->
             <TextView
                 android:id="@+id/txtControlInsectos"
                 android:layout_width="match_parent"
@@ -172,7 +249,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
             <CheckBox
                 android:id="@+id/RBext"
                 android:layout_width="match_parent"
@@ -180,23 +256,93 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:text="Exterior" />
-
             <CheckBox
                 android:id="@+id/RBint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="Interior" />
-
             <CheckBox
                 android:id="@+id/RBbo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="Bodegas" />
+            <CheckBox
+                android:id="@+id/CBdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Deslindes patios" />
+            <CheckBox
+                android:id="@+id/CBpe2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Perimetro externo" />
+            <CheckBox
+                android:id="@+id/CBbmp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Bod. Mat. Primas" />
+            <CheckBox
+                android:id="@+id/CBbpt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Bod. Prod. Terminado" />
+            <CheckBox
+                android:id="@+id/CBsh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Servicios Higienicos" />
+            <CheckBox
+                android:id="@+id/CBc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Camarines" />
+            <CheckBox
+                android:id="@+id/CBad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Alcantarillados / desagues" />
+            <CheckBox
+                android:id="@+id/CBg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Guardia" />
+            <CheckBox
+                android:id="@+id/CBo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Oficinas" />
+            <CheckBox
+                android:id="@+id/CBsdm2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Sala de Maquinas" />
+            <CheckBox
+                android:id="@+id/CBcya2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Casino y anexos" />
+            <CheckBox
+                android:id="@+id/CBpp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Produccion / procesos" />
 
-            <!-- -->
 
+            <!--                                        2                          -->
             <TextView
                 android:id="@+id/txtControlMicroorganismos"
                 android:layout_width="match_parent"
@@ -208,7 +354,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
             <CheckBox
                 android:id="@+id/RBsha"
                 android:layout_width="match_parent"
@@ -216,24 +361,26 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:text="Serv. Hig. Adm." />
-
             <CheckBox
                 android:id="@+id/RBshc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="Serv. Hig. Camarines" />
-
+                android:text="Serv. Hig. Camarines y personal" />
             <CheckBox
                 android:id="@+id/RBcamF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="Camara de Frio" />
+            <CheckBox
+                android:id="@+id/CBcgp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Casino Gerencia / Personal" />
 
-
-            <!-- -->
-
+            <!--                                                            3                     -->
             <TextView
                 android:id="@+id/txtDesrratisacion"
                 android:layout_width="match_parent"
@@ -245,7 +392,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
             <CheckBox
                 android:id="@+id/RBbroma"
                 android:layout_width="match_parent"
@@ -253,23 +399,87 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:text="Bromadiolona" />
-
             <CheckBox
                 android:id="@+id/RBtrampa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="Trampa Captura Viva" />
-
             <CheckBox
                 android:id="@+id/RBnotoxico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:text="No toxico" />
+            <CheckBox
+                android:id="@+id/CBtb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Termixan bloque" />
+            <CheckBox
+                android:id="@+id/CBdb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Detia bloque(Bromadiolona)" />
+            <CheckBox
+                android:id="@+id/CBdc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Detia cebo(Bromadiolona)" />
+            <CheckBox
+                android:id="@+id/CBrb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Rastop bloque(Bromadiolona)" />
 
-            <!-- -->
+            <CheckBox
+                android:id="@+id/CBrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Rastop Pellet (Bromadiolona)" />
+            <CheckBox
+                android:id="@+id/CBdm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Deabline Molienda" />
+            <CheckBox
+                android:id="@+id/CBdb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Deabline Bloque" />
+            <CheckBox
+                android:id="@+id/CB50p1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="50 ppm / 10 a 20 gr x cebo" />
+            <CheckBox
+                android:id="@+id/CB50p2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="50 ppm / 10 a 20 ml x cebo" />
+            <CheckBox
+                android:id="@+id/CBta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Trampas Adhesivas" />
+            <CheckBox
+                android:id="@+id/CBcnt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Cebo no toxico" />
 
+            <!--                5                   -->
             <TextView
                 android:id="@+id/txtDesisn"
                 android:layout_width="match_parent"
@@ -305,11 +515,60 @@
                 android:text="Aquatrin" />
 
             <CheckBox
-                android:id="@+id/RBAgita"
+            android:id="@+id/RBAgita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Agita" />
+            <CheckBox
+                android:id="@+id/CBanasec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="Agita" />
+                android:text="Anasec (Praletrina 20%)" />
+            <CheckBox
+                android:id="@+id/CBdemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Demon (Cipermetria 25 ec)" />
+            <CheckBox
+                android:id="@+id/CBko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="K - Othrine 2.5 me" />
+            <CheckBox
+                android:id="@+id/CBcyper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Cyperkill (Cipermetrina 25%)" />
+            <CheckBox
+                android:id="@+id/CBcyperP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Cyperkill Plus" />
+
+            <CheckBox
+                android:id="@+id/CBquimico10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="10% - 100cc / 10lts. agua" />
+            <CheckBox
+                android:id="@+id/CBquimico20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="20% 20gr / 100cc agua" />
+            <CheckBox
+                android:id="@+id/CBtrampa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Trampas adhesivas" />
 
 
             <!-- -->
@@ -332,7 +591,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:text="Sanicitrex" />
+                android:text="Sanicitrex D19/C8" />
+            <CheckBox
+                android:id="@+id/CB05agua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:text="0,5% - 50cc/ 10lts. agua" />
+            <CheckBox
+                android:id="@+id/CB01agua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:text="0,1% - 10cc/ 10lts. agua" />
+
 
             <!-- -->
 
@@ -347,9 +621,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-
-
 
             <EditText
                 android:id="@+id/EditTextObservacion"
@@ -399,7 +670,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center|right|bottom">
 
 
@@ -412,6 +683,18 @@
             android:layout_weight="1"
             android:clickable="true"
             android:onClick="pdfFirma"
+            app:backgroundTint="@android:color/background_light"
+            app:srcCompat="@drawable/firma" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="pdfFirma2"
             app:backgroundTint="@android:color/background_light"
             app:srcCompat="@drawable/firma" />
 

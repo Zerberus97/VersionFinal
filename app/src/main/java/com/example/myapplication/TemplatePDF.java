@@ -37,7 +37,7 @@ public class TemplatePDF extends AppCompatActivity {
     private Paragraph paragraph;
     private Font fTitle = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
     private Font fSubTitle = new Font(Font.FontFamily.TIMES_ROMAN, 16, Font.BOLD);
-    private Font fText = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
+    private Font fText = new Font(Font.FontFamily.TIMES_ROMAN, 10, Font.NORMAL);
     private Font txtTabla = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.WHITE);
     private Font fServicio = new Font(Font.FontFamily.TIMES_ROMAN, 13, Font.ITALIC, BaseColor.BLACK);
 
@@ -84,10 +84,6 @@ public class TemplatePDF extends AppCompatActivity {
             folder.mkdir();
         archivoPDF = new File(folder, "OT_"+ nombrexd +"_" + direccionxd + "_" + timeStamp +".pdf");
 
-
-
-
-
     }
 
     public void closeDocument() {
@@ -101,7 +97,6 @@ public class TemplatePDF extends AppCompatActivity {
     }
 
     public void addTitles(String title, String subTitle) {
-
 
         fSubTitle.setColor(59,152,78);
         try {
@@ -151,14 +146,14 @@ public class TemplatePDF extends AppCompatActivity {
         }
     }
 
+    //----------- EL TAMAÑO DE LAS FIRMAS --------------------------------
     public void addFirmas(Image imgR, Image imgC){
-        //Chunk firmaR = new Chunk( imgR);
-        //Chunk firmaC = new Chunk( imgC);
+
         try{
             Chunk glue = new Chunk(new VerticalPositionMark());
             Paragraph p = new Paragraph();
-            imgR.scalePercent(70);
-            imgC.scalePercent(15);
+            imgR.scalePercent(5);
+            imgC.scalePercent(5);
             p.add(new Chunk(imgR,0,0,true));
             p.add(new Chunk(glue));
             p.add(new Chunk(imgC,0,0,true));
@@ -204,14 +199,11 @@ public class TemplatePDF extends AppCompatActivity {
 
     }
 
-
-
-
     public void addParagraph(String text) {
         try {
             paragraph = new Paragraph(text, fText);
-            paragraph.setSpacingAfter(2);
-            paragraph.setSpacingBefore(2);
+            paragraph.setSpacingAfter(0);
+            paragraph.setSpacingBefore(0);
             documento.add(paragraph);
         } catch (Exception e) {
             Log.e("addParagraph", e.toString());
@@ -221,10 +213,10 @@ public class TemplatePDF extends AppCompatActivity {
 
     public void createTable(String[] header, ArrayList<String[]> clients) {
         paragraph = new Paragraph();
-        paragraph.setFont(txtTabla);
+        paragraph.setFont(fText); //aqui estaba txtTabla
         PdfPTable pdfPTable = new PdfPTable(header.length);
         pdfPTable.setWidthPercentage(100);
-        pdfPTable.setSpacingBefore(20);
+        pdfPTable.setSpacingBefore(10);
         PdfPCell pdfPCell;
         int indexC = 0;
 
@@ -238,9 +230,9 @@ public class TemplatePDF extends AppCompatActivity {
         for (int indexR = 2; indexR < clients.size(); indexR++) {
             String[] row = clients.get(indexR);
             for (indexC = 0; indexC < clients.size(); indexC++) {
-                pdfPCell = new PdfPCell(new Phrase(row[indexC]));
-                pdfPCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-                pdfPCell.setFixedHeight(60);
+                pdfPCell = new PdfPCell(new Phrase(row[indexC], fText));
+                pdfPCell.setHorizontalAlignment(Element.ALIGN_LEFT);
+                pdfPCell.setFixedHeight(200);
 
                 pdfPTable.addCell(pdfPCell);
 
