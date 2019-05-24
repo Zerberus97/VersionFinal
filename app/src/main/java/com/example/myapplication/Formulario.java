@@ -69,16 +69,16 @@ public class Formulario extends AppCompatActivity {
     private Button btnGuardar, btnEnviar;
     private RadioGroup RGroup;
     private RadioButton RadioServicio, RadioControl;
-    private CheckBox CheckRBpe, CheckRBpi, CheckRBb, CheckRbext, CheckRbint, CheckRbbo, CheckRbsha, CheckRbshc, CheckRbcamF, CheckRbbroma, CheckRbtrampa, CheckRbnotoxico, CheckRbcipermetrina, CheckRbdelta, CheckRbaguatrin, CheckRbagita, CheckRbsanicitrex;
+    private CheckBox CheckRBpe, CheckRBpi, CheckRBb, CheckRbext, CheckRbint, CheckRbbo, CheckRbsha, CheckRbshc, CheckRbcamF, CheckRbrmb, CheckRbtrampa, CheckRbnotoxico, CheckRbcipermetrina, CheckRbdelta, CheckRbaguatrin, CheckRbagita, CheckRbsanicitrex;
     private CheckBox CBdeslindes, CBpec, CBbmp, CBbpt, CBo, CBe, CBc, CBa, CBsdm, CBcya, CBlya, CBpp, CBg; //Nuevos del primer tier
     private CheckBox CBdp, CBpe2, CBbmp2, CBbpt2, CBsh, CBc2, CBad, CBg2, CBo2, CBsdm2, CBcya2, CBpp2;
-    private CheckBox CBcgp; //microorganismos
+    private CheckBox CBcgp, CBseda; //microorganismos
     private CheckBox CBtb, CBdb, CBdc,CBrb ,CBrp,CBdm,CBdb2, CB50p1, CB50p2, CBta, CBcnt;
     private CheckBox CBanasec, CBdemon, CBko, CBcyper, CBcyperP, CBquimico10, CBquimico20, CBtrampa;  //desinsectacion
     private CheckBox CB05agua, CB01agua; //Dosis y tipo de producto utilizados
 
     private String TipoServicio = "";
-    private String Cell = "CEL: 9 8370 1407 – 2 2966 3828";
+    private String Cell = "CEL: 2 2966 3828 - 9 8370 1407";
     private String web = "www.antimouse.cl";
     private String[]header={"Control de Roedores","Control de Insectos","Control de Microorganismos"};
     private String[]header2={"Desratizacion","Desinsectacion","Sanitizacion"};
@@ -93,7 +93,7 @@ public class Formulario extends AppCompatActivity {
     //CHECKBOX CONTROL DE INSECTOS
     private String exteriorVuelta,interiorVuelta,bodegas2Vuelta, CBdpV, CBpe2V, CBbmp2V, CBbpt2V, CBshV, CBc2V, CBadV, CBg2V, CBo2V, CBsdm2V, CBcya2V, CBpp2V;
     //CHECKBOX CONTROL DE MICROORGANISMOS
-    private String admVuelta,camarinesVuelta,camFVuelta, casinoGerenciaV;
+    private String admVuelta,camarinesVuelta,camFVuelta, casinoGerenciaV, CBsedaV;
     //CHECKBOX DESRATIZACION
     private String bromaVuelta,trampaVuelta,toxVuelta,CBtbV, CBdbV, CBdcV, CBrbV , CBrpV , CBdmV , CBdb2V, CB50p1V, CB50p2V, CBtaV, CBcntV;
     //CHECKBOX DESINSECTACION
@@ -145,8 +145,9 @@ public class Formulario extends AppCompatActivity {
     String ServHigCamarines = " ";
     String CamaraFrio = "   ";
     String CasinoGerenciaPersonal = "   ";
+    String SanitizacionDeEstanqueAgua = "   ";
     //----
-    String Bromadiolona = " ";
+    String Bromadiolona = " "; //Rastop Molienda ()
     String Trampacapturaviva = "    ";
     String Notoxicas = "    ";
     String termixanbloque = "    ";
@@ -350,8 +351,9 @@ public class Formulario extends AppCompatActivity {
         CheckRbshc =  findViewById(R.id.RBshc);
         CheckRbcamF =  findViewById(R.id.RBcamF);
         CBcgp = findViewById(R.id.CBcgp);
+        CBseda = findViewById(R.id.CBseda);
         //-----Cuarto-----
-        CheckRbbroma =  findViewById(R.id.RBbroma);
+        CheckRbrmb =  findViewById(R.id.CBrmb);
         CheckRbtrampa =  findViewById(R.id.RBtrampa);
         CheckRbnotoxico =  findViewById(R.id.RBnotoxico);
         CBtb = findViewById(R.id.CBtb);
@@ -436,6 +438,7 @@ public class Formulario extends AppCompatActivity {
             camarinesVuelta=extras.getString("KEY_CAMARINES");
             camFVuelta=extras.getString("KEY_CAMF");
             casinoGerenciaV=extras.getString("KEY_CASINOG");
+            CBsedaV=extras.getString("KEY_SEDA");
 
 
             bromaVuelta=extras.getString("KEY_BROMA");
@@ -527,8 +530,9 @@ public class Formulario extends AppCompatActivity {
             if (camarinesVuelta.equals("checked")){CheckRbshc.setChecked(true); }
             if (camFVuelta.equals("checked")){CheckRbcamF.setChecked(true); }
             if (casinoGerenciaV.equals("checked")){CBcgp.setChecked(true); }
+            if (CBsedaV.equals("checked")){CBseda.setChecked(true); }
 
-            if (bromaVuelta.equals("checked")){CheckRbbroma.setChecked(true); }
+            if (bromaVuelta.equals("checked")){ CheckRbrmb.setChecked(true); }
             if (trampaVuelta.equals("checked")){CheckRbtrampa.setChecked(true); }
             if (toxVuelta.equals("checked")){CheckRbnotoxico.setChecked(true); }
             //aqui
@@ -645,7 +649,7 @@ public class Formulario extends AppCompatActivity {
             produccionProcesos = "Produccion / Procesos";
         }
         if (CBg.isChecked()){
-            guardia = "Guardia";
+            guardia = "Sala de basura";
         }
 
 
@@ -678,7 +682,7 @@ public class Formulario extends AppCompatActivity {
             camarines = "Camarines";
         }
         if(CBad.isChecked()){
-            alcantarillados2 = "Alcantarillados/Desagues";
+            alcantarillados2 = "Equipos T.U.V.";
         }
         if(CBg2.isChecked()){
             guardia2 = "Guardia";
@@ -698,7 +702,7 @@ public class Formulario extends AppCompatActivity {
 
         //---- Control de Microorganismos
         if (CheckRbsha.isChecked()){
-            ServHig = "Ser. Hig. Adm.";
+            ServHig = "Ser. Hig. Administrativos";
         }
         if (CheckRbshc.isChecked()){
             ServHigCamarines = "Ser. Hig. Camarines y personal";
@@ -709,12 +713,13 @@ public class Formulario extends AppCompatActivity {
         if(CBcgp.isChecked()){
             CasinoGerenciaPersonal = "Casino Gerencia / Personal";
         }
+        if(CBseda.isChecked()){
+            SanitizacionDeEstanqueAgua = "Sanit. de estanque de agua";
+        }
 
 
         //---- Desratizacion
-        if (CheckRbbroma.isChecked()){
-            Bromadiolona = "Bromadiolona";
-        }
+
         if (CheckRbtrampa.isChecked()){
             Trampacapturaviva = "Trampa captura viva";
         }
@@ -735,6 +740,9 @@ public class Formulario extends AppCompatActivity {
         }
         if(CBrp.isChecked()){
             rastoppellet = "Rastop Pellet(Bromadiolona)";
+        }
+        if (CheckRbrmb.isChecked()){
+            Bromadiolona = "Rastop Molienda (Bromadiolona)";
         }
         if(CBdm.isChecked()){
             deablinemolienda = "Deabline Molienda";
@@ -775,7 +783,7 @@ public class Formulario extends AppCompatActivity {
             Demon = "Demon (Cipermetria 25ec)";
         }
         if(CBko.isChecked()){
-            KO = "K - Othrine 2.5 m e";
+            KO = "K - Othrine 2.5";
         }
         if(CBcyper.isChecked()){
             Cyperkill = "Cyperkill (Cipermetrina 25%)";
@@ -954,22 +962,13 @@ public class Formulario extends AppCompatActivity {
                     templatePDF.addMetaData("OrdenDeTrabajo","OrdenDeTrabajo","Antimouse");
 
                     templatePDF.addImage(image);
-
-
-
-
-
-
-                    templatePDF.addTitles("ORDEN DE TRABAJO","N° " + correlativo);
+                    templatePDF.addContact(Cell,web,"ORDEN DE TRABAJO", "N° " + correlativo);
                     templatePDF.Servicio(TipoServicio);
                     templatePDF.addParagraph("Nombre empresa: " + txtNombreEmpresa.getText().toString());
                     templatePDF.addParagraph("Direccion empresa: " + txtDireccionEmpresa.getText().toString());
 
-
-
                     templatePDF.addParagraph("Fecha: "+ timeStamp);
                     templatePDF.addParagraph("RBD: "+ txtRBDEmpresa.getText().toString());
-
 
                     templatePDF.createTable(header,getFila1());
                     templatePDF.createTable(header2,getFila2());
@@ -1091,6 +1090,7 @@ public class Formulario extends AppCompatActivity {
             templatePDF.addParagraph("\n");
             templatePDF.addParagraph("Observaciones");
             templatePDF.addParagraph(txtObservaciones.getText().toString());
+            templatePDF.addParagraph("\n");
             templatePDF.addFirmas(firma, firma2);
             templatePDF.closeDocument();
 
@@ -1257,7 +1257,7 @@ public class Formulario extends AppCompatActivity {
         String rbstring = "";
         String perimetroExt="",perimetroInt="",bodegas="",deslindes="",pec="",bmp="",bpt="",o="",e="",c="",a="",sdm="",cya="",lya="",pp="",g="";
         String exterior="",interior="",bodegas2="",CBdp2="", CBpe22="", CBbmp22="", CBbpt22="", CBsh2="", CBc22="", CBad2="", CBg22="", CBo22="", CBsdm22="", CBcya22="", CBpp22="";
-        String adm="",camarines="",camF="", casino="";
+        String adm="",camarines="",camF="", casino="", seda="";
         String broma="",trampa="",tox="",CBtb2="", CBdb22="", CBdc2="",CBrb2="",CBrp2="",CBdm2="",CBdb222="", CB50p12="", CB50p22="", CBta2="", CBcnt2="";
         String cipe="",delta="",aqua="",agita="",anasec="" ,demon="" ,ko="" ,cyper="" ,cyperP="" ,quimico10="" ,quimico20="" ,trampa2="";
         String sani="",quimico05="",quimico01="";
@@ -1306,8 +1306,9 @@ public class Formulario extends AppCompatActivity {
         if (CheckRbshc.isChecked()){ camarines="checked"; }
         if (CheckRbcamF.isChecked()){ camF="checked"; }
         if (CBcgp.isChecked()){ casino="checked"; }
+        if (CBseda.isChecked()){ seda="checked"; }
 
-        if (CheckRbbroma.isChecked()){ broma="checked"; }
+        if (CheckRbrmb.isChecked()){ broma="checked"; }
         if (CheckRbtrampa.isChecked()){ trampa="checked"; }
         if (CheckRbnotoxico.isChecked()){ tox="checked"; }
         //abajo
@@ -1392,6 +1393,7 @@ public class Formulario extends AppCompatActivity {
         bundle.putString("KEY_CAMARINES",camarines);
         bundle.putString("KEY_CAMF",camF);
         bundle.putString("KEY_CASINOG",casino);
+        bundle.putString("KEY_SEDA", seda);
 
 
         bundle.putString("KEY_BROMA",broma);
@@ -1450,7 +1452,7 @@ public class Formulario extends AppCompatActivity {
         String rbstring = "";
         String perimetroExt="",perimetroInt="",bodegas="",deslindes="",pec="",bmp="",bpt="",o="",e="",c="",a="",sdm="",cya="",lya="",pp="",g="";
         String exterior="",interior="",bodegas2="",CBdp2="", CBpe22="", CBbmp22="", CBbpt22="", CBsh2="", CBc22="", CBad2="", CBg22="", CBo22="", CBsdm22="", CBcya22="", CBpp22="";
-        String adm="",camarines="",camF="", casino="";
+        String adm="",camarines="",camF="", casino="",seda="";
         String broma="",trampa="",tox="",CBtb2="", CBdb22="", CBdc2="",CBrb2="",CBrp2="",CBdm2="",CBdb222="", CB50p12="", CB50p22="", CBta2="", CBcnt2="";
         String cipe="",delta="",aqua="",agita="",anasec="" ,demon="" ,ko="" ,cyper="" ,cyperP="" ,quimico10="" ,quimico20="" ,trampa2="";
         String sani="",quimico05="",quimico01="";
@@ -1499,8 +1501,9 @@ public class Formulario extends AppCompatActivity {
         if (CheckRbshc.isChecked()){ camarines="checked"; }
         if (CheckRbcamF.isChecked()){ camF="checked"; }
         if (CBcgp.isChecked()){ casino="checked"; }
+        if (CBseda.isChecked()){ seda="checked"; }
 
-        if (CheckRbbroma.isChecked()){ broma="checked"; }
+        if (CheckRbrmb.isChecked()){ broma="checked"; }
         if (CheckRbtrampa.isChecked()){ trampa="checked"; }
         if (CheckRbnotoxico.isChecked()){ tox="checked"; }
         //abajo
@@ -1585,7 +1588,7 @@ public class Formulario extends AppCompatActivity {
         bundle.putString("KEY_CAMARINES",camarines);
         bundle.putString("KEY_CAMF",camF);
         bundle.putString("KEY_CASINOG",casino);
-
+        bundle.putString("KEY_SEDA",seda);
 
         bundle.putString("KEY_BROMA",broma);
         bundle.putString("KEY_TRAMPA",trampa);
@@ -1648,7 +1651,7 @@ public class Formulario extends AppCompatActivity {
 
         rows.add(new String[]{perimetroExt +"\n" + perimetroInt + "\n" + bodegas + "\n" + deslindes + "\n" + PerimetroExternoCercano + "\n" + bodegasMateriasPrimas + "\n" + bodegasProductosTerminados + "\n" + oficinas + "\n" + entretechos + "\n" + cerchas + "\n" + alcantarillados + "\n" + salasDeMquinas + "\n" + casinosYAnexos + "\n" + laboratoriosYAnexos + "\n" + produccionProcesos + "\n" + guardia
                 ,Exterior + "\n" + Interior + "\n" + bodegas2 + "\n" + perimetroExterno + "\n" + bodegasMateriasPrimas2 + "\n" + bodegasProductosTerminados2 + "\n" + serviciosHigienicos + "\n" + camarines + "\n" + alcantarillados2 + "\n" + guardia2 + "\n" + oficinas2 + "\n" + salasDeMquinas2 + "\n" +casinosYAnexos2 + "\n" + produccionProcesos2,
-                ServHig + "\n" + ServHigCamarines + "\n" + CamaraFrio + "\n" + CasinoGerenciaPersonal});
+                ServHig + "\n" + ServHigCamarines + "\n" + CamaraFrio + "\n" + CasinoGerenciaPersonal + "\n" + SanitizacionDeEstanqueAgua});
 
 
         return rows;
@@ -1662,7 +1665,8 @@ public class Formulario extends AppCompatActivity {
         rows.add(new String[]{Bromadiolona +"\n" + Trampacapturaviva + "\n" + Notoxicas + "\n" + EspacioBlanco
                 ,Cipermetrina +"\n"+ Deltametrina +"\n" + Aquatrin +"\n" + Agita,
                 EspacioBlanco + "\n" + Sanicitrex + EspacioBlanco + "\n" + EspacioBlanco});
-        rows.add(new String[]{Bromadiolona +"\n" + Trampacapturaviva + "\n" + Notoxicas + "\n" + termixanbloque + "\n" + detiabloque + "\n" + detiacebo + "\n" +rastopbloque + "\n" + rastoppellet + "\n" + deablinemolienda + "\n" + deablinebloque + "\n" + EspacioBlanco + "\n" + usoQuimico + "\n" + dosis50p + "\n" + dosis50p2 + "\n" + EspacioBlanco + "\n" + noQuimico + "\n" + Trampaadhesivas + "\n" + cebonotoxico,
+        //Bromadiolona es Rastop Molienda
+        rows.add(new String[]{ Trampacapturaviva + "\n" + Notoxicas + "\n" + termixanbloque + "\n" + detiabloque + "\n" + detiacebo + "\n" +rastopbloque + "\n" + rastoppellet + "\n" + Bromadiolona +"\n" + deablinemolienda + "\n" + deablinebloque + "\n" + EspacioBlanco + "\n" + usoQuimico + "\n" + dosis50p + "\n" + dosis50p2 + "\n" + EspacioBlanco + "\n" + noQuimico + "\n" + Trampaadhesivas + "\n" + cebonotoxico,
                 Cipermetrina +"\n"+ Deltametrina +"\n" + Aquatrin +"\n" + Agita + "\n" + Anasec + "\n" + Demon + "\n" + KO + "\n" + Cyperkill + "\n" + CyperkillP + "\n" + EspacioBlanco + "\n" + usoQuimico + "\n" + dosisUso10 + "\n" + dosisUso20 + "\n" + EspacioBlanco + "\n" + noQuimico + "\n" + TrampaA,
                 EspacioBlanco + "\n" + Sanicitrex + EspacioBlanco + "\n" +  EspacioBlanco + "\n" + usoQuimico + "\n" + dosisUso05agua + "\n" + dosisUso01agua });
 
@@ -1693,6 +1697,7 @@ public class Formulario extends AppCompatActivity {
          bodegasProductosTerminados = " ";
          oficinas = " ";
          cerchas = "  ";
+         entretechos = "    ";
          alcantarillados = "  ";
          salasDeMquinas = "   ";
          casinosYAnexos = "   ";
@@ -1720,6 +1725,7 @@ public class Formulario extends AppCompatActivity {
         ServHigCamarines = " ";
         CamaraFrio = "   ";
         CasinoGerenciaPersonal = "  ";
+        SanitizacionDeEstanqueAgua = "  ";
         //----
         Bromadiolona = " ";
         Trampacapturaviva = "    ";
@@ -1804,8 +1810,9 @@ public class Formulario extends AppCompatActivity {
         CheckRbshc.setChecked(false);
         CheckRbcamF .setChecked(false);
         CBcgp.setChecked(false);
+        CBseda.setChecked(false);
         //-----Cuarto-----
-        CheckRbbroma.setChecked(false);
+        CheckRbrmb.setChecked(false);
         CheckRbtrampa.setChecked(false);
         CheckRbnotoxico.setChecked(false);
         CBtb.setChecked(false);

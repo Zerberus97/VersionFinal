@@ -52,7 +52,7 @@ public class FirmaActivity extends AppCompatActivity {
 
     private String formularioEX,formularioIN,formularioBO2, formularioCBdpV , formularioCBdpVCBpe2V,formularioCBdpVCBbmp2, formularioCBdpVCBbpt2, formularioCBdpVCBsh, formularioCBdpVCBc2, formularioCBdpVCBad, formularioCBdpVCBg2, formularioCBdpVCBo2, formularioCBdpVCBsdm2, formularioCBdpVCBcya2, formularioCBdpVCBpp2;
 
-    private String formularioADM,formularioCAMARINES,formularioCAMF, formularioCasinoG;
+    private String formularioADM,formularioCAMARINES,formularioCAMF, formularioCasinoG, formularioSeda;
 
     private String formularioBroma,formularioTrampa,formularioTox,formularioCBtb, formularioCBdb, formularioCBdc, formularioCBrb, formularioCBrp, formularioCBdm, formularioCBdb2, formularioCB50p1, formularioCB50p2, formularioCBta, formularioCBcnt;
 
@@ -121,6 +121,7 @@ public class FirmaActivity extends AppCompatActivity {
             formularioCAMARINES=extras.getString("KEY_CAMARINES");
             formularioCAMF=extras.getString("KEY_CAMF");
             formularioCasinoG=extras.getString("KEY_CASINOG");
+            formularioSeda=extras.getString("KEY_SEDA");
 
             formularioBroma=extras.getString("KEY_BROMA");
             formularioTrampa=extras.getString("KEY_TRAMPA");
@@ -244,6 +245,7 @@ public class FirmaActivity extends AppCompatActivity {
                 bundle.putString("KEY_CAMARINES",formularioCAMARINES);
                 bundle.putString("KEY_CAMF",formularioCAMF);
                 bundle.putString("KEY_CASINOG",formularioCasinoG);
+                bundle.putString("KEY_SEDA", formularioSeda);
 
                 bundle.putString("KEY_BROMA",formularioBroma);
                 bundle.putString("KEY_TRAMPA",formularioTrampa);
